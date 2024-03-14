@@ -10,9 +10,9 @@ public class Exercicio40Test {
         double totalEsperado = 50;
         var calculadora = new CalculadoraDeValorParaVenda();
 
-        double total = calculadora.calcular();
+        var valorParaVenda = calculadora.calcular();
 
-        Assertions.assertEquals(totalEsperado, total);
+        Assertions.assertEquals(totalEsperado, valorParaVenda.total);
     }
 
     @Test
@@ -20,8 +20,9 @@ public class Exercicio40Test {
         double totalEsperado = 49;
         var calculadora = new CalculadoraDeValorParaVenda();
 
-        double descontoCliente = calculadora.desconto();
+        var valorParaVenda = calculadora.calcular();
 
-        Assertions.assertEquals(totalEsperado, descontoCliente);
+        Assertions.assertEquals(totalEsperado, valorParaVenda.desconto);
     }
 }
+
