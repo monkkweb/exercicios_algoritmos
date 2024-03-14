@@ -29,5 +29,16 @@ public class Exercicio40Test {
 
         Assertions.assertEquals(totalEsperado, valorParaVenda.desconto);
     }
-}
 
+    @Test
+    public void se_quantidade_for_maior_que_cinco_e_quantidade_menor_ou_igual_a_dez_aplica_desconto_tres_porcento() {
+        double totalEsperado = 97;
+        var calculadora = new CalculadoraDeValorParaVenda();
+        double preco = 10;
+        int quantidade = 10;
+
+        ValorParaVenda valorParaVenda = calculadora.calcular(preco, quantidade);
+
+        Assertions.assertEquals(totalEsperado, valorParaVenda.desconto);
+    }
+}
