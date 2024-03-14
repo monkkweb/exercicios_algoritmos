@@ -9,7 +9,6 @@ public class Calculadora {
     }
 
     public double desconto() {
-
-            return 49;
+        return 49;
     }
 }
