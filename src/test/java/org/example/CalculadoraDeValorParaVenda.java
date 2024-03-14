@@ -11,6 +11,8 @@ public class CalculadoraDeValorParaVenda {
             valorParaVenda.desconto = valorParaVenda.total * (1 - 0.02);
         else if (quantidadeAdiquirida <= 10)
             valorParaVenda.desconto = valorParaVenda.total * (1 - 0.03);
+        else
+            valorParaVenda.desconto = valorParaVenda.total * (1 - 0.05);
         return valorParaVenda;
     }
 }
