@@ -8,7 +8,7 @@ public class Exercicio40Test {
     @Test
     public void deve_calcular_valor_para_venda() {
         double totalEsperado = 50;
-        var calculadora = new Calculadora();
+        var calculadora = new CalculadoraDeValorParaVenda();
 
         double total = calculadora.calcular();
 
@@ -18,7 +18,7 @@ public class Exercicio40Test {
     @Test
     public void deve_calcular_valor_com_desconto_cliente() {
         double totalEsperado = 49;
-        var calculadora = new Calculadora();
+        var calculadora = new CalculadoraDeValorParaVenda();
 
         double descontoCliente = calculadora.desconto();
 

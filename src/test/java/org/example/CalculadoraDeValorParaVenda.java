@@ -1,6 +1,6 @@
 package org.example;
 
-public class Calculadora {
+public class CalculadoraDeValorParaVenda {
     double precoUnitario = 25.00;
     int quantidadeAdiquirida = 2;
 
