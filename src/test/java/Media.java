@@ -1,17 +1,15 @@
+import lombok.Getter;
+
+@Getter
 public class Media {
+
+    private final Conceito conceito;
     private double mediaDeAproveitamento;
     private double mediaDosExercicios;
 
-    public Media(double mediaDeAproveitamento, double mediaDosExercicios) {
+    public Media(double mediaDeAproveitamento, double mediaDosExercicios, Conceito conceito) {
         this.mediaDeAproveitamento = mediaDeAproveitamento;
         this.mediaDosExercicios = mediaDosExercicios;
-    }
-
-    public double getMediaDeAproveitamento() {
-        return mediaDeAproveitamento;
-    }
-
-    public double getMediaDosExercicios() {
-        return mediaDosExercicios;
+        this.conceito = conceito;
     }
 }
