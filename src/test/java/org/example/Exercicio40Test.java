@@ -17,12 +17,6 @@ public class Exercicio40Test {
     @InjectMocks
     private CalculadoraDeValorParaVenda calculadora;
 
-    @BeforeEach
-    void init() {
-        MockitoAnnotations.openMocks(this);
-        calculadora = new CalculadoraDeValorParaVenda();
-    }
-
     @Test
     public void deve_calcular_valor_para_venda() {
         var totalEsperado = 50;
