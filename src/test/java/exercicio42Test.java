@@ -21,9 +21,9 @@ public class exercicio42Test {
         anoAtual = LocalDate.now().getYear();
     }
 
+    // TODO: Separar os testes em cenários diferentes, pois nao é uma boa prática estar todos em um so.
     @ParameterizedTest(name = "codigo: {0} ano de nascimento: {1} e ano de engressado: {2}")
     @CsvSource({"2,1950,2000", "3,2010,1994", "4,1964,1999"})
-
     public void sessenta_e_cinco_anos_para_se_aposentar_ou_ter_trinta_anos_de_trabalho_ou_minimo_sessenta_anos_e_vinte_e_cinco_anos_de_trabalho_para_se_aposentar
             (int codigo, int anoDeNascimento, int anoDeIngresso) {
 
