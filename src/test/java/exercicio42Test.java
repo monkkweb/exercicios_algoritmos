@@ -61,6 +61,48 @@ public class exercicio42Test {
     }
 
     @Test
+    public void funcionario_nao_requer_aposentadoria() {
+        String mensagemEsperada = "Não requer aposentadoria";
+        int anoDeIngresso = 2015;
+
+        CalculoAposentadoria funcionario;
+        try (MockedStatic<LocalDate> mock = Mockito.mockStatic(LocalDate.class, Mockito.CALLS_REAL_METHODS)) {
+            mock.when(LocalDate::now).thenReturn(DATA_ATUAL);
+            funcionario = aposentadoria.verificar(CODIGO, ANO_DE_NASCIMENTO_NAO_APOSENTAVEL, anoDeIngresso);
+        }
+
+        Assertions.assertEquals(mensagemEsperada, funcionario.mensagemSeRequerOuNaoAposentadoria);
+    }
+
+    @Test
+    public void idade_do_funcionario() {
+        int anoDeNascimento = 1994;
+        int anoDeIngresso = 2015;
+        int idadeDoFuncionario = 30;
+
+        CalculoAposentadoria funcionario;
+        try (MockedStatic<LocalDate> mock = Mockito.mockStatic(LocalDate.class, Mockito.CALLS_REAL_METHODS)) {
+            mock.when(LocalDate::now).thenReturn(DATA_ATUAL);
+            funcionario = aposentadoria.verificar(CODIGO, anoDeNascimento, anoDeIngresso);
+        }
+        Assertions.assertEquals(idadeDoFuncionario, funcionario.idade);
+    }
+
+    @Test
+    public void tempo_de_trabalho_do_funcionario() {
+        int anoDeNascimento = 1994;
+        int anoDeIngresso = 2015;
+        int tempoDeTrabalho = 9;
+
+        CalculoAposentadoria funcionario;
+        try (MockedStatic<LocalDate> mock = Mockito.mockStatic(LocalDate.class, Mockito.CALLS_REAL_METHODS)) {
+            mock.when(LocalDate::now).thenReturn(DATA_ATUAL);
+            funcionario = aposentadoria.verificar(CODIGO, anoDeNascimento, anoDeIngresso);
+        }
+        Assertions.assertEquals(tempoDeTrabalho, funcionario.tempoDeTrabalho);
+    }
+
+    @Test
     public void data_atual_nao_pode_ser_menor_que_ano_de_nascimento() {
         String mensagemEsperada = "Ano atual não pode ser menor que ano de nascimento.";
         int anoDeNascimento = 2027;
@@ -90,20 +132,6 @@ public class exercicio42Test {
         }
 
         Assertions.assertEquals(mensagemEsperada, excecao.getMessage());
-    }
-
-    @Test
-    public void funcionario_nao_requer_aposentadoria() {
-        String mensagemEsperada = "Não requer aposentadoria";
-        int anoDeIngresso = 2015;
-
-        CalculoAposentadoria funcionario;
-        try (MockedStatic<LocalDate> mock = Mockito.mockStatic(LocalDate.class, Mockito.CALLS_REAL_METHODS)) {
-            mock.when(LocalDate::now).thenReturn(DATA_ATUAL);
-            funcionario = aposentadoria.verificar(CODIGO, ANO_DE_NASCIMENTO_NAO_APOSENTAVEL, anoDeIngresso);
-        }
-
-        Assertions.assertEquals(mensagemEsperada, funcionario.mensagemSeRequerOuNaoAposentadoria);
     }
 
     @Test
