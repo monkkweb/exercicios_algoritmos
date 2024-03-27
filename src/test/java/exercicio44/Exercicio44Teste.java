@@ -15,9 +15,10 @@ public class Exercicio44Teste {
     public void O_segundo_valor_tem_que_ser_diferente_de_zero() {
         var impressora = mock(Impressora.class);
         var leitor = mock(Leitor.class);
+        when(leitor.ler()).thenReturn(4.0).thenReturn(2.0);
         Calculadora calculadora = new Calculadora(impressora, leitor);
-        double valorEsperado = 2;
         ArgumentCaptor<Double> argumentcaptor = ArgumentCaptor.forClass(Double.class);
+        double valorEsperado = 2;
 
         calculadora.calcular();
 
@@ -27,9 +28,9 @@ public class Exercicio44Teste {
 
     @Test
     public void enquanto_o_segundo_valor_for_zero_repita() {
+        var impressora = mock(Impressora.class);
         var leitor = mock(Leitor.class);
         when(leitor.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
-        Impressora impressora = mock(Impressora.class);
         Calculadora calculadora = new Calculadora(impressora, leitor);
         ArgumentCaptor<Double> argumentcaptor = ArgumentCaptor.forClass(Double.class);
         double valorEsperado = 1;
