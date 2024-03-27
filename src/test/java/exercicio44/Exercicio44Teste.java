@@ -23,7 +23,7 @@ public class Exercicio44Teste {
 
     @Test
     public void o_segundo_valor_tem_que_ser_diferente_de_zero() {
-        var valorEsperado = 1;
+        var valorEsperado = 1.0;
         when(LEITOR.ler()).thenReturn(4.0).thenReturn(4.0);
 
         calculadora.calcular();
@@ -34,7 +34,7 @@ public class Exercicio44Teste {
 
     @Test
     public void enquanto_o_segundo_valor_for_zero_repita() {
-        var valorEsperado = 1;
+        var valorEsperado = 1.0;
         when(LEITOR.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
 
         calculadora.calcular();

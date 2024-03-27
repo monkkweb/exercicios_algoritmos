@@ -16,6 +16,7 @@ public class Calculadora {
         double segundoValor = leitor.ler();
 
         while (segundoValor == 0) {
+            impressora.imprimir("Valor invalido");
             segundoValor = leitor.ler();
         }
 

@@ -1,21 +1,44 @@
 package exercicio45;
 
-import lombok.var;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+@ExtendWith(MockitoExtension.class)
 public class Exercicio45Test {
+
+    @Mock
+    public Impressora IMPRESSORA;
+    @Mock
+    public Leitor LEITOR;
+    @InjectMocks
+    private Calculadora calculadora;
+    @Captor
+    private ArgumentCaptor<Double> argumentCaptor;
+    @Captor
+    private ArgumentCaptor<String> argumentCaptorString;
+
     @Test
     public void enquanto_segundo_numero_for_zero_repete_segundo_valor() {
-        var leitor = Mockito.mock(Leitor.class);
-        Mockito.when(leitor.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
-        var impressora = Mockito.mock(Impressora.class);
-        ArgumentCaptor<Double> argumentCaptor = ArgumentCaptor.forClass(Double.class);
-        Calculadora calculadora = new Calculadora(impressora, leitor);
+        Mockito.when(LEITOR.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
+        double valorEsperado = 1;
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimir(argumentCaptor.capture());
+        Mockito.verify(IMPRESSORA).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(valorEsperado, argumentCaptor.getValue());
+    }
+
+    @Test
+    public void deve_retornar_mensagem_de_erro_quando_segundo_valor_for_zero() {
+        Mockito.when(LEITOR.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
+        String mensagemEsperada = "Valor invalido";
+
+        calculadora.calcular();
+
+        Mockito.verify(IMPRESSORA).imprimir(argumentCaptorString.capture());
+        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
     }
 }
