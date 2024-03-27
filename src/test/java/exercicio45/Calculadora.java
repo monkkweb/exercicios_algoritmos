@@ -1,4 +1,4 @@
-package exercicio44;
+package exercicio45;
 
 import lombok.var;
 
@@ -15,12 +15,9 @@ public class Calculadora {
         var primeiroValor = leitor.ler();
         double segundoValor = leitor.ler();
 
-        do {
-            if (segundoValor == 0)
-                impressora.imprimir("valor invalido");
+        while (segundoValor == 0) {
             segundoValor = leitor.ler();
-        } while (segundoValor == 0);
-
+        }
 
         var resultado = primeiroValor / segundoValor;
         impressora.imprimir(resultado);
