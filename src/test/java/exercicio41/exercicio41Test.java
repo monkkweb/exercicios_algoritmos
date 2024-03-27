@@ -1,3 +1,5 @@
+package exercicio41;
+
 import lombok.var;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

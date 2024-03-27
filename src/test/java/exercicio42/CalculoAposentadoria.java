@@ -1,3 +1,5 @@
+package exercicio42;
+
 public class CalculoAposentadoria {
 
     int codigo;

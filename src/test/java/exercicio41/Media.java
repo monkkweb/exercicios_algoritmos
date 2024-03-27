@@ -1,3 +1,5 @@
+package exercicio41;
+
 import lombok.Getter;
 
 @Getter

@@ -1,4 +1,4 @@
-package org.example;
+package exercicio40;
 
 import net.sf.log4jdbc.sql.jdbcapi.DataSourceSpy;
 import org.springframework.beans.factory.annotation.Autowired;

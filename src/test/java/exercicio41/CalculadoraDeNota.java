@@ -1,3 +1,6 @@
+package exercicio41;
+
+import exercicio41.Media;
 import lombok.var;
 
 public class CalculadoraDeNota {

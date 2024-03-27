@@ -1,3 +1,5 @@
+package exercicio43;
+
 public class CalculadoraDeTriangulo {
     public String mensagem(int ladoA, int ladoB, int ladoC) {
         if ((ladoA < ladoB + ladoC) && (ladoB < ladoA + ladoC) && (ladoC < ladoA + ladoB)) {
