@@ -19,7 +19,9 @@ public class Exercicio44Teste {
     @InjectMocks
     private Calculadora calculadora;
     @Captor
-    private ArgumentCaptor<Object> argumentCaptor;
+    private ArgumentCaptor<Double> argumentCaptor;
+    @Captor
+    private ArgumentCaptor<String> argumentCaptorString;
 
     @Test
     public void o_segundo_valor_tem_que_ser_diferente_de_zero() {
@@ -46,9 +48,11 @@ public class Exercicio44Teste {
     @Test
     public void deve_retornar_mensagem_de_erro_quando_segundo_valor_for_zero() {
         when(LEITOR.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
+        String mensagemEsperada = "valor invalido";
 
         calculadora.calcular();
 
-        Mockito.verify(IMPRESSORA).imprimir("valor invalido");
+        Mockito.verify(IMPRESSORA).imprimir(argumentCaptorString.capture());
+        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
     }
 }
