@@ -11,7 +11,7 @@ public class Calculadora {
         this.leitor = leitor;
     }
 
-    public void calcular() {
+    public void calcular(){
         var primeiroValor = leitor.ler();
         double segundoValor = leitor.ler();
 
