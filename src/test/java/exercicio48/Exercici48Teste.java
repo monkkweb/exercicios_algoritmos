@@ -21,7 +21,7 @@ public class Exercici48Teste {
     ArgumentCaptor<String> argumentCaptorString;
 
     @Test
-    void deve_calcular_media_do_aluno_quando_as_notas_forem_maior_que_zero() {
+    void deve_calcular_media_do_aluno_quando_a_primeira_e_segunda_nota_forem_maior_que_zero() {
         Mockito.when(LEITOR.ler()).thenReturn(5.0).thenReturn(5.0);
         double mediaEsperada = 5;
 
@@ -32,7 +32,7 @@ public class Exercici48Teste {
     }
 
     @Test
-    void quando_nota_um_for_menor_que_zero_entao_imprima_nota_invalida() {
+    void quando_primeira_nota_for_menor_que_zero_entao_imprima_nota_invalida() {
         Mockito.when(LEITOR.ler()).thenReturn(-2.0).thenReturn(5.0).thenReturn(5.0);
         String mensagemEsperada = "nota um invalida";
 
@@ -43,7 +43,7 @@ public class Exercici48Teste {
     }
 
     @Test
-    void quando_nota_um_for_valida_na_sgunda_vez_entao_imprime_media_do_aluno() {
+    void quando_primeira_nota_for_valida_na_segunda_vez_entao_imprime_media_do_aluno() {
         Mockito.when(LEITOR.ler()).thenReturn(-2.0).thenReturn(5.0).thenReturn(5.0);
         double mediaEsperada = 5;
 

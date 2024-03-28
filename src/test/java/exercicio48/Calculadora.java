@@ -11,22 +11,22 @@ public class Calculadora {
     }
 
     public void calcularMedia() {
-        double notaUm;
-        double notaDois;
+        double primeiraNota;
+        double segundaNota;
         do {
-            notaUm = leitor.ler();
-            if (notaUm < 0)
+            primeiraNota = leitor.ler();
+            if (primeiraNota < 0)
                 impressora.imprimir("nota um invalida");
-        } while (notaUm < 0);
+        } while (primeiraNota < 0);
 
         do {
-            notaDois = leitor.ler();
-            if (notaDois < 0)
+            segundaNota = leitor.ler();
+            if (segundaNota < 0)
                 impressora.imprimir("nota dois invalida");
-        } while (notaDois < 0);
+        } while (segundaNota < 0);
 
 
-        double media = (notaUm + notaDois) / 2;
-        impressora.imprimir(media);
+        double mediaDoAluno = (primeiraNota + segundaNota) / 2;
+        impressora.imprimir(mediaDoAluno);
     }
 }
