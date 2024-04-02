@@ -28,7 +28,8 @@ public class Exercici48Teste {
     void deve_calcular_media_do_aluno_quando_a_primeira_e_segunda_nota_forem_maior_que_zero(double primeiraNota,
                                                                                             double segundaNota,
                                                                                             double mediaEsperada) {
-        Mockito.when(leitor.ler()).thenReturn(primeiraNota).thenReturn(segundaNota);
+        Mockito.when(leitor.lerDouble()).thenReturn(primeiraNota).thenReturn(segundaNota);
+        Mockito.when(leitor.lerString()).thenReturn("não");
 
         calculadora.calcularMedia();
 
@@ -38,30 +39,33 @@ public class Exercici48Teste {
 
     @Test
     void quando_primeira_nota_for_menor_que_zero_entao_imprima_primeira_nota_invalida() {
-        Mockito.when(leitor.ler()).thenReturn(-2.0).thenReturn(5.0).thenReturn(5.0);
-        String mensagemEsperada = "primeira nota invalida";
+        Mockito.when(leitor.lerDouble()).thenReturn(-2.0).thenReturn(5.0).thenReturn(5.0);
+        var mensagemEsperada = "primeira nota invalida";
+        Mockito.when(leitor.lerString()).thenReturn("não");
 
         calculadora.calcularMedia();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorString.capture());
-        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptorString.capture());
+        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getAllValues().get(0));
     }
 
     @Test
     void quando_primeira_nota_for_maior_que_dez_imprima_primeira_nota_invalida() {
         var mensagemEsperada = "primeira nota invalida";
-        Mockito.when(leitor.ler()).thenReturn(11.0).thenReturn(7.0);
+        Mockito.when(leitor.lerDouble()).thenReturn(11.0).thenReturn(7.0);
+        Mockito.when(leitor.lerString()).thenReturn("não");
 
         calculadora.calcularMedia();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorString.capture());
-        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptorString.capture());
+        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getAllValues().get(0));
     }
 
     @Test
     void quando_primeira_nota_for_valida_na_segunda_vez_entao_imprime_media_do_aluno() {
-        Mockito.when(leitor.ler()).thenReturn(-2.0).thenReturn(5.0).thenReturn(5.0);
-        double mediaEsperada = 5;
+        Mockito.when(leitor.lerDouble()).thenReturn(-2.0).thenReturn(5.0).thenReturn(5.0);
+        Mockito.when(leitor.lerString()).thenReturn("não");
+        var mediaEsperada = 5;
 
         calculadora.calcularMedia();
 
@@ -71,29 +75,32 @@ public class Exercici48Teste {
 
     @Test
     void quando_segunda_nota_for_menor_que_zero_entao_imprima_segunda_nota_invalida() {
-        Mockito.when(leitor.ler()).thenReturn(5.0).thenReturn(-2.0).thenReturn(4.0);
+        Mockito.when(leitor.lerDouble()).thenReturn(5.0).thenReturn(-2.0).thenReturn(4.0);
+        Mockito.when(leitor.lerString()).thenReturn("não");
         var mensagemEsperada = "segunda nota invalida";
 
         calculadora.calcularMedia();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorString.capture());
-        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptorString.capture());
+        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getAllValues().get(0));
     }
 
     @Test
     void quando_segunda_nota_for_maior_que_dez_imprima_segunda_nota_invalida() {
-        Mockito.when(leitor.ler()).thenReturn(6.0).thenReturn(12.0).thenReturn(6.0);
+        Mockito.when(leitor.lerDouble()).thenReturn(6.0).thenReturn(12.0).thenReturn(6.0);
+        Mockito.when(leitor.lerString()).thenReturn("não");
         var mensagemEsperada = "segunda nota invalida";
 
         calculadora.calcularMedia();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorString.capture());
-        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptorString.capture());
+        Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getAllValues().get(0));
     }
 
     @Test
     void quando_segunda_nota_for_valida_na_segunda_vez_entao_imprime_media_do_aluno() {
-        Mockito.when(leitor.ler()).thenReturn(6.0).thenReturn(7.0);
+        Mockito.when(leitor.lerDouble()).thenReturn(6.0).thenReturn(7.0);
+        Mockito.when(leitor.lerString()).thenReturn("não");
         var mediaEsperada = 6.5;
 
         calculadora.calcularMedia();
@@ -103,14 +110,24 @@ public class Exercici48Teste {
     }
 
     @Test
-    void enquanto_comando_for_sim_deve_calcular_nova_media() {
-        Mockito.when(leitor.ler()).thenReturn("sim");
-        var comandoEsperado = "sim";
+    void deve_calcular_media_novamente_quando_comando_for_sim() {
+        Mockito.when(leitor.lerDouble()).thenReturn(7.0).thenReturn(9.0).thenReturn(1.0).thenReturn(9.0);
+        Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("não");
+        var mediaEsperado = 5.0;
 
         calculadora.calcularMedia();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorString.capture());
-        Assertions.assertEquals(comandoEsperado, argumentCaptorString.getValue());
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperado, argumentCaptor.getValue());
     }
 
+    @Test
+    void quando_comando_for_nao_termina_codigo() {
+        Mockito.when(leitor.lerDouble()).thenReturn(5.0).thenReturn(6.0);
+        Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("não");
+
+        calculadora.calcularMedia();
+
+        Mockito.verify(leitor, Mockito.times(2)).lerString();
+    }
 }

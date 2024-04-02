@@ -1,15 +1,12 @@
 package exercicio48;
 
-
-import lombok.var;
-
 public class Calculadora {
     private Impressora impressora;
     private Leitor leitor;
 
-    public Calculadora(Impressora impressora, Leitor leitor) {
+    public Calculadora(Impressora impressora, Leitor leitorDouble) {
         this.impressora = impressora;
-        this.leitor = leitor;
+        this.leitor = leitorDouble;
     }
 
     public void calcularMedia() {
@@ -18,14 +15,14 @@ public class Calculadora {
         String comando;
         do {
             do {
-                primeiraNota = (double) leitor.ler();
+                primeiraNota = leitor.lerDouble();
                 if (primeiraNota < 0 || primeiraNota > 10) {
                     impressora.imprimir("primeira nota invalida");
                 }
             } while (primeiraNota < 0 || primeiraNota > 10);
 
             do {
-                segundaNota = (double) leitor.ler();
+                segundaNota = leitor.lerDouble();
                 if (segundaNota < 0 || segundaNota > 10) {
                     impressora.imprimir("segunda nota invalida");
                 }
@@ -35,7 +32,7 @@ public class Calculadora {
             impressora.imprimir(mediaDoAluno);
 
             impressora.imprimir("novo calculo?(S/N)");
-            comando = (String) leitor.ler();
+            comando = leitor.lerString();
         } while (comando.equals("sim"));
 
     }

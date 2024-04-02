@@ -1,5 +1,6 @@
 package exercicio48;
 
 public interface Leitor {
-    Object ler();
+    Double lerDouble();
+    String lerString();
 }

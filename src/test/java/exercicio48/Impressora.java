@@ -1,5 +1,6 @@
 package exercicio48;
 
 public interface Impressora {
-    void imprimir(Object capture);
+    void imprimir(Double numero);
+    void imprimir(String texto);
 }
