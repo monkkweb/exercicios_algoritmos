@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Test;
 public class Exercicio52 {
 
     @Test
-    public void os_dez_primeiros_numeros_inteiros_maior_que_cem_() {
+    public void os_dez_primeiros_numeros_inteiros_maior_que_cem() {
 
-        String numerosInteirosEsperados = "101102103104105106107108109110";
+        int[] numerosInteirosEsperados = {101, 102, 103, 104, 105, 106, 107, 108, 109, 110};
 
         Numeros numeros = new Numeros();
-        Assertions.assertEquals(numerosInteirosEsperados, numeros.numerosInteiros());
+
+        Assertions.assertArrayEquals(numerosInteirosEsperados, numeros.dezPrimeirosInteirosMaioresQueCem());
     }
 }

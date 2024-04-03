@@ -2,12 +2,11 @@ package exercicio52;
 
 public class Numeros {
 
-    public String numerosInteiros() {
-        StringBuilder numerosImpressos = new StringBuilder();
-        for (int numero = 101; numero <= 110; numero++) {
-
-            numerosImpressos.append(numero);
+    public int [] dezPrimeirosInteirosMaioresQueCem() {
+        int[]resultado = new int[10];
+        for (int numeroDaLista = 0; numeroDaLista < 10; numeroDaLista++) {
+            resultado[numeroDaLista] = 101 + numeroDaLista;
         }
-        return numerosImpressos.toString();
+        return resultado;
     }
 }
