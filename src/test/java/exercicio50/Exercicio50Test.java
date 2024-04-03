@@ -3,7 +3,7 @@ package exercicio50;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Exercicio50 {
+public class Exercicio50Test {
 
     @Test
     public void numero_tem_que_ser_menor_que_um() {

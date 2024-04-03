@@ -13,7 +13,10 @@ public class Numeros {
     }
 
     public void calcularNumerosInteiros() {
-        int quantidadeDeNumeros = leitor.ler();
+        int quantidadeDeNumeros;
+        do {
+            quantidadeDeNumeros = leitor.lerInteiro();
+        } while (quantidadeDeNumeros < 0);
         List<Integer> resultado = new ArrayList<>();
         for (int numeroDaLista = 0; numeroDaLista < quantidadeDeNumeros; numeroDaLista++) {
             resultado.add(1 + numeroDaLista);

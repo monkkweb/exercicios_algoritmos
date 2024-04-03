@@ -3,7 +3,7 @@ package exercicio52;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Exercicio52 {
+public class Exercicio52Test {
 
     @Test
     public void os_dez_primeiros_numeros_inteiros_maior_que_cem() {
