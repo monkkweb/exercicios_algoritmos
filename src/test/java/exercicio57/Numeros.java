@@ -10,12 +10,16 @@ public class Numeros {
     }
 
     void numerosCrescentes() {
-        int[] resultado = new int[leitor.ler()];
+        int tamanhoArray = leitor.ler();
+        int[] resultado = new int[tamanhoArray];
         int valorDeN = 1;
-        while (valorDeN <= leitor.ler()) {
-            resultado[valorDeN] = valorDeN++;
+        int indice = 0;
+
+        while (indice < tamanhoArray) {
+            resultado[indice] = valorDeN;
+            valorDeN++;
+            indice++;
         }
         impressora.imprimir(resultado);
-
     }
 }
