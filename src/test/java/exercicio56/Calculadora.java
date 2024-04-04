@@ -1,9 +1,5 @@
 package exercicio56;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Calculadora {
     private Impressora impressora;
     private Leitor leitor;
@@ -15,10 +11,10 @@ public class Calculadora {
 
     public void tabuada() {
         int numeroDaMultiplicacao = leitor.ler();
-        List<Integer> resultado = new ArrayList<>();
+        int[] resultado = new int[10];
         for (int numeroDaTabuada = 0; numeroDaTabuada < 10; numeroDaTabuada++) {
-            resultado = Collections.singletonList(numeroDaMultiplicacao * (1 + numeroDaTabuada));
+            resultado[numeroDaTabuada] = (numeroDaMultiplicacao * (1 + numeroDaTabuada));
         }
-        impressora.imprimir(resdo);
+        impressora.imprimir(resultado);
     }
 }
