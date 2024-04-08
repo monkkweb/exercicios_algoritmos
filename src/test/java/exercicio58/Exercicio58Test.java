@@ -7,7 +7,7 @@ import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class exercicio58Test {
+public class Exercicio58Test {
     @Mock
     private Impressora impressora;
     @Mock
