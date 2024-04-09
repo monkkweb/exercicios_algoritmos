@@ -1,8 +1,5 @@
 package exercicio59;
 
-import java.util.List;
-
-import lombok.var;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,17 +15,16 @@ public class Exercicio59Test {
     @InjectMocks
     Numeros numeros;
     @Captor
-    ArgumentCaptor<int[]> argumentCaptor;
+    ArgumentCaptor<Integer> argumentCaptor;
 
     @Test
     void deve_imprimir_quantos_numeros_sao_negativos() {
         Mockito.when(leitor.ler()).thenReturn(-2).thenReturn(5).thenReturn(-3).thenReturn(8);
-        int[] numerosEsperados = new int[]{-2, -3};
-
+        int numerosEsperado = 2;
         numeros.lerNumerosEImprimirOsNegativos();
 
-        Mockito.verify(impressora).imprimir(argumentCaptor.capture());
-        Assertions.assertArrayEquals(numerosEsperados, argumentCaptor.getValue());
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(numerosEsperado, argumentCaptor.getValue());
 
     }
 }

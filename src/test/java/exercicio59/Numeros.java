@@ -10,11 +10,14 @@ public class Numeros {
     }
 
     void lerNumerosEImprimirOsNegativos() {
+        int numeroNegativo = 0;
         for (int i = 0; i < 10; i++) {
             int numero = leitor.ler();
             if (numero < 0) {
-                impressora.imprimir(numero);
+                numeroNegativo++;
+                impressora.imprimir(numeroNegativo);
             }
+
         }
     }
 }
