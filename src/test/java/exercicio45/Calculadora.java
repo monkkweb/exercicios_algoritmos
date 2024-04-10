@@ -1,7 +1,5 @@
 package exercicio45;
 
-import lombok.var;
-
 public class Calculadora {
     private Leitor leitor;
     private Impressora impressora;
@@ -11,7 +9,7 @@ public class Calculadora {
         this.leitor = leitor;
     }
 
-    public void calcular(){
+    public void calcular() {
         var primeiroValor = leitor.ler();
         double segundoValor = leitor.ler();
 

@@ -1,8 +1,5 @@
 package exercicio41;
 
-import exercicio41.Media;
-import lombok.var;
-
 public class CalculadoraDeNota {
     public Media calcular(int notaUm, int notaDois, int notaTres) {
         if (notaUm < 0)

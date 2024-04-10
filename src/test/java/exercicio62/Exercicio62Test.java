@@ -1,6 +1,5 @@
 package exercicio62;
 
-import lombok.var;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,7 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class Exercicio62Test {
     @Captor
-    ArgumentCaptor<Double> argumentCaptorDouble;
+    ArgumentCaptor<Double> argumentCaptor;
     @Mock
     Impressora impressora;
     @Mock
@@ -27,8 +26,8 @@ public class Exercicio62Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorDouble.capture());
-        Assertions.assertEquals(mediaEsperada, argumentCaptorDouble.getValue());
+        Mockito.verify(impressora).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
     }
 
     @Test
@@ -40,8 +39,8 @@ public class Exercicio62Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimir(argumentCaptorDouble.capture());
-        Assertions.assertEquals(mediaEsperada, argumentCaptorDouble.getValue());
+        Mockito.verify(impressora).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
     }
 
     @Test

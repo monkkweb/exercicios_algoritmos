@@ -1,7 +1,5 @@
 package exercicio44;
 
-import lombok.var;
-
 public class Calculadora {
     private Leitor leitor;
     private Impressora impressora;

@@ -1,7 +1,5 @@
 package exercicio42;
 
-import lombok.var;
-
 import java.time.LocalDate;
 
 public class VerificaAposentadoriaDoFuncionario {
