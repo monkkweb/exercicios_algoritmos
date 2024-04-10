@@ -19,7 +19,7 @@ public class Exercicio62Test {
 
 
     @Test
-    void dev_calcular_media_de_um_aluno_quando_usuario_digitar_um_aluno() {
+    void deve_calcular_media_de_um_aluno_quando_usuario_digitar_um_aluno() {
         Mockito.when(leitor.ler()).thenReturn(1);
         Mockito.when(leitor.lerDouble()).thenReturn(10d);
         var mediaEsperada = 10;
