@@ -10,11 +10,10 @@ public class Calculadora {
     }
 
     void calcular() {
-        int numeros;
         int soma = 0;
         for (int i = 0; i < 10; i++) {
-            numeros = leitor.ler();
-            soma = soma + numeros;
+            int numero = leitor.ler();
+            soma = soma + numero;
         }
         impressora.imprimir(soma);
 
