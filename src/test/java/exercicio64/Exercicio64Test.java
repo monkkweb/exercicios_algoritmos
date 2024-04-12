@@ -10,9 +10,9 @@ import static org.mockito.Mockito.when;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 @ExtendWith(MockitoExtension.class)
-public class Exercicio64 {
+public class Exercicio64Test {
     @Captor
-    ArgumentCaptor<Integer> argumentCaptor;
+    ArgumentCaptor<Double> argumentCaptor;
     @Mock
     Impressora impressora;
     @Mock

@@ -1,5 +1,5 @@
 package exercicio63;
 
 public interface Impressora {
-    void imprimir(Object capture);
+    void imprimir(double valor);
 }

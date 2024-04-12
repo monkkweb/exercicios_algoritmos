@@ -1,6 +1,6 @@
 package exercicio63;
 
-public class Calculadora {
+class Calculadora {
     private Impressora impressora;
     private Leitor leitor;
 

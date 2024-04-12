@@ -15,12 +15,12 @@ public class Calculadora {
 
         do {
             if (segundoValor == 0)
-                impressora.imprimir("valor invalido");
+                impressora.imprimirString("valor invalido");
             segundoValor = leitor.ler();
         } while (segundoValor == 0);
 
 
         var resultado = primeiroValor / segundoValor;
-        impressora.imprimir(resultado);
+        impressora.imprimirDouble(resultado);
     }
 }

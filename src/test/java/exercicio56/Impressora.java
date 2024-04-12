@@ -1,5 +1,5 @@
 package exercicio56;
 
 public interface Impressora {
-    void imprimir(Object captor);
+    void imprimir(int[] valor);
 }

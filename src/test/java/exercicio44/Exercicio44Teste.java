@@ -12,9 +12,9 @@ import static org.mockito.Mockito.when;
 public class Exercicio44Teste {
 
     @Mock
-    public Impressora IMPRESSORA;
+    public Impressora impressora;
     @Mock
-    public Leitor LEITOR;
+    public Leitor leitor;
     @InjectMocks
     private Calculadora calculadora;
     @Captor
@@ -25,33 +25,33 @@ public class Exercicio44Teste {
     @Test
     public void o_segundo_valor_tem_que_ser_diferente_de_zero() {
         var valorEsperado = 1.0;
-        when(LEITOR.ler()).thenReturn(4.0).thenReturn(4.0);
+        when(leitor.ler()).thenReturn(4.0).thenReturn(4.0);
 
         calculadora.calcular();
 
-        Mockito.verify(IMPRESSORA).imprimir(argumentCaptor.capture());
+        Mockito.verify(impressora).imprimirDouble(argumentCaptor.capture());
         Assertions.assertEquals(valorEsperado, argumentCaptor.getValue());
     }
 
     @Test
     public void enquanto_o_segundo_valor_for_zero_repita() {
         var valorEsperado = 1.0;
-        when(LEITOR.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
+        when(leitor.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
 
         calculadora.calcular();
 
-        Mockito.verify(IMPRESSORA).imprimir(argumentCaptor.capture());
+        Mockito.verify(impressora).imprimirDouble(argumentCaptor.capture());
         Assertions.assertEquals(valorEsperado, argumentCaptor.getValue());
     }
 
     @Test
     public void deve_retornar_mensagem_de_erro_quando_segundo_valor_for_zero() {
-        when(LEITOR.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
+        when(leitor.ler()).thenReturn(5.0).thenReturn(0.0).thenReturn(5.0);
         String mensagemEsperada = "valor invalido";
 
         calculadora.calcular();
 
-        Mockito.verify(IMPRESSORA).imprimir(argumentCaptorString.capture());
+        Mockito.verify(impressora).imprimirString(argumentCaptorString.capture());
         Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
     }
 }

@@ -10,9 +10,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class Exercicio45Test {
 
     @Mock
-    public Impressora IMPRESSORA;
+    public Impressora impressora;
     @Mock
-    public Leitor LEITOR;
+    public Leitor leitor;
     @InjectMocks
     private Calculadora calculadora;
     @Captor
@@ -22,23 +22,23 @@ public class Exercicio45Test {
 
     @Test
     public void enquanto_segundo_numero_for_zero_repete_segundo_valor() {
-        Mockito.when(LEITOR.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
+        Mockito.when(leitor.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
         double valorEsperado = 1;
 
         calculadora.calcular();
 
-        Mockito.verify(IMPRESSORA).imprimir(argumentCaptor.capture());
+        Mockito.verify(impressora).imprimirDouble(argumentCaptor.capture());
         Assertions.assertEquals(valorEsperado, argumentCaptor.getValue());
     }
 
     @Test
     public void deve_retornar_mensagem_de_erro_quando_segundo_valor_for_zero() {
-        Mockito.when(LEITOR.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
+        Mockito.when(leitor.ler()).thenReturn(4.0).thenReturn(0.0).thenReturn(4.0);
         String mensagemEsperada = "Valor invalido";
 
         calculadora.calcular();
 
-        Mockito.verify(IMPRESSORA).imprimir(argumentCaptorString.capture());
+        Mockito.verify(impressora).imprimirString(argumentCaptorString.capture());
         Assertions.assertEquals(mensagemEsperada, argumentCaptorString.getValue());
     }
 }

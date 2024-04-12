@@ -44,7 +44,7 @@ public class Exercicio62Test {
     }
 
     @Test
-    void deve_calcular_media_dos_alunos_quando_usuario_digitar_cinco_alunos2() {
+    void deve_ler_quantidade_de_alunos() {
         Mockito.when(leitor.ler())
                 .thenReturn(1);
 

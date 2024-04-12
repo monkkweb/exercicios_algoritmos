@@ -1,7 +1,6 @@
 package exercicio44;
 
-import java.util.Objects;
-
 public interface Impressora {
-    void imprimir(Object capture);
+    void imprimirDouble(double valor);
+    void imprimirString(String mensagem);
 }

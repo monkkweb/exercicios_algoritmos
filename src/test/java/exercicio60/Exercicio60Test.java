@@ -15,7 +15,7 @@ public class Exercicio60Test {
     @InjectMocks
     CalculadorDeIntervalo calculadorDeIntervalo;
     @Captor
-    ArgumentCaptor<Integer> argumentCaptor;
+    ArgumentCaptor<Double> argumentCaptor;
 
     @Test
     void deve_imprimir_quantos_valores_estao_fora_do_intervalo_de_dez_ah_vinte() {

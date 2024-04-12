@@ -14,11 +14,11 @@ public class Calculadora {
         double segundoValor = leitor.ler();
 
         while (segundoValor == 0) {
-            impressora.imprimir("Valor invalido");
+            impressora.imprimirString("Valor invalido");
             segundoValor = leitor.ler();
         }
 
         var resultado = primeiroValor / segundoValor;
-        impressora.imprimir(resultado);
+        impressora.imprimirDouble(resultado);
     }
 }
