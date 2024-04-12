@@ -12,13 +12,26 @@ public class Exercicio68Test {
     ArgumentCaptor<Double> argumentCaptor;
     @Mock
     private Leitor leitor;
-    @InjectMocks
-    Calculadora calculadora;
     @Mock
     private Impressora impressora;
+    @InjectMocks
+    Calculadora calculadora;
 
     @Test
-    void deve_ler_valor_de_cada_mercadoria() {
+    void deve_calcular_valor_total_em_estoque() {
+        Mockito.when(leitor.lerInt()).thenReturn(5);
+        Mockito.when(leitor.lerDouble()).thenReturn(1d).thenReturn(5d).
+                thenReturn(10d).thenReturn(6d).thenReturn(3d);
+        var valorEsperado = 25;
+
+        calculadora.calcular();
+
+        Mockito.verify(impressora, Mockito.times(6)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(valorEsperado, argumentCaptor.getAllValues().get(4));
+    }
+
+    @Test
+    void deve_calcular_media_dos_valores_de_cinco_mercadorias() {
         Mockito.when(leitor.lerInt()).thenReturn(5);
         Mockito.when(leitor.lerDouble()).thenReturn(1d)
                 .thenReturn(5d).thenReturn(10d).thenReturn(6d).thenReturn(3d);
@@ -26,7 +39,7 @@ public class Exercicio68Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirDouble(argumentCaptor.capture());
+        Mockito.verify(impressora, Mockito.times(6)).imprimir(argumentCaptor.capture());
         Assertions.assertEquals(valorEsperado, argumentCaptor.getValue());
     }
 }

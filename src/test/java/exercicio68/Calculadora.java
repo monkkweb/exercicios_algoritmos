@@ -16,9 +16,10 @@ public class Calculadora {
         for (int i = 0; i < numeroDeEstoque; i++) {
             var valorDosProdutos = leitor.lerDouble();
             somatoriaDevalores += valorDosProdutos;
+            impressora.imprimir(somatoriaDevalores);
         }
         double media = somatoriaDevalores / numeroDeEstoque;
-        impressora.imprimirDouble(media);
+        impressora.imprimir(media);
 
     }
 }
