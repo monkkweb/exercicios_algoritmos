@@ -1,5 +1,8 @@
 package exercicio69;
 
+import org.mockito.ArgumentCaptor;
+
 public interface Impressora {
-    void imprimir (int valor);
+    void imprimirDouble(double valor);
+    void imprimirString(String comando);
 }

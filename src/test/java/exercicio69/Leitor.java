@@ -1,5 +1,7 @@
 package exercicio69;
 
 public interface Leitor {
-    int ler();
+    String lerString();
+
+    double lerDouble();
 }
