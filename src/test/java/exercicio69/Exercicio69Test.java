@@ -42,6 +42,13 @@ public class Exercicio69Test {
     }
     @Test
     void deve_mostrar_o_valor_de_cada_mercadoria(){
-        Assertions.assertEquals();
+        Mockito.when(leitor.lerDouble()).thenReturn(6d);
+        Mockito.when(leitor.lerString()).thenReturn("não");
+        var valorEsperado = 6;
+
+        calculadora.calcular();
+
+        Mockito.verify(impressora, Mockito.times(2)).imprimirDouble(argumetCaptorDouble.capture());
+        Assertions.assertEquals(valorEsperado, argumetCaptorDouble.getValue());
     }
 }
