@@ -16,8 +16,8 @@ public class Calculadora {
         String comando;
         do {
             numeroDeEstoque++;
-            double valorDosProdutos = leitor.lerDouble();
-            somatoriaDeValores += valorDosProdutos;
+            double valorDaMercadoria = leitor.lerDouble();
+            somatoriaDeValores += valorDaMercadoria;
             impressora.imprimirDouble(somatoriaDeValores);
 
             impressora.imprimirString("Mais mercadoria?(S/N)");
