@@ -19,18 +19,49 @@ public class Exercicio73Test {
 
     @Test
     void deve_calcular_a_media_de_salario_da_populacao() {
-        Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("nao");
-        Mockito.when(leitor.lerDouble()).thenReturn(5605.0).thenReturn(1200.0);
-        var mediaEsperada = 1.506;
+        Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("sim").thenReturn("nao");
+        Mockito.when(leitor.lerDouble()).thenReturn(3500d).thenReturn(1200d).thenReturn(300d);
+        var mediaEsperada = 1325;
 
         calculadora.calcular();
 
         Mockito.verify(impressora).imprimirMediaDeSalario(argumentCaptor.capture());
         Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
     }
+
     @Test
-    void Deve_calcular_media_de_filhos_da_populacao(){
+    void deve_calcular_media_de_filhos_da_populacao() {
         Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("sim").thenReturn("nao");
-//    Asse
+        Mockito.when(leitor.lerInt()).thenReturn(2).thenReturn(2).thenReturn(4).thenReturn(4);
+        var mediaEsperada = 3;
+
+        calculadora.calcular();
+
+        Mockito.verify(impressora).imprimirMediaDeFilhos(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
     }
+
+    @Test
+    void deve_mostrar_maior_salario_dos_habitantes() {
+        Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("sim").thenReturn("nao");
+        Mockito.when(leitor.lerDouble()).thenReturn(10000d).thenReturn(1200d).thenReturn(300d);
+        var maiorSalarioEsperado = 10000;
+
+        calculadora.calcular();
+
+        Mockito.verify(impressora).imprimirMaiorSalario(argumentCaptor.capture());
+        Assertions.assertEquals(maiorSalarioEsperado, argumentCaptor.getValue());
+    }
+
+    @Test
+    void deve_calcular_percentual_de_pessoas_que_tem_salario_ah_baixo_de_cento_e_cinquenta() {
+        Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("sim").thenReturn("nao");
+        Mockito.when(leitor.lerDouble()).thenReturn(10000d).thenReturn(1200d).thenReturn(120d).thenReturn(140d);
+        var percentualEsperado = 50;
+        calculadora.calcular();
+
+        Mockito.verify(impressora).imprimirPercentualDePessoasSalarioMenorQueCentoEhCinquenta(argumentCaptor.capture());
+        Assertions.assertEquals(percentualEsperado, argumentCaptor.getValue());
+    }
+
 }

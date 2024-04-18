@@ -33,15 +33,14 @@ public class Calculadora {
             totalPessoas++;
             totalFilhos += numeroFilhos;
 
-            maiorSalario = salario > maiorSalario ? salario : maiorSalario;
-
-            if (salario < 150.00) {
+            if (salario > maiorSalario)
+                maiorSalario =salario;
+            if (salario < 150.00)
                 salarioMenorQue150++;
-            }
 
             impressora.imprimirString("mais alguma pessoa?");
             comando = leitor.lerString();
-        }while (comando.equals("Sim"));
+        }while (comando.equals("sim"));
 
         if (totalPessoas > 0) {
             double mediaSalario = somaSalario / totalPessoas;
