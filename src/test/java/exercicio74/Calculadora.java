@@ -2,16 +2,16 @@ package exercicio74;
 
 public class Calculadora {
     public int[] calcular() {
-        int resultado = 0;
-        int[] taboada = new int[100];
-        for (int i = 1; i <= 10; i++) {
-            for (int j = 1; j <= 10; j++) {
-                resultado = i * j;
+        int[] resultado = new int[11];
+
+        for (int multiplicador = 1; multiplicador <= 10; multiplicador++) {
+
+            for (int numero = 1; numero <= 10; numero++) {
+                resultado[numero] = multiplicador * numero;
             }
-
-
         }
-        int i = taboada[resultado];
-        return taboada;
+
+        return resultado;
+
     }
 }
