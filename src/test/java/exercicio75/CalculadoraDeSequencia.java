@@ -17,6 +17,7 @@ public class CalculadoraDeSequencia {
             }
             resultado.add(numeros);
         }
+        System.out.println(resultado);
         return resultado.get(9);
     }
 }
