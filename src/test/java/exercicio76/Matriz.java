@@ -5,23 +5,23 @@ import java.util.List;
 
 public class Matriz {
 
-    public static final int LINHAS = 10;
-    public static final int COLUNAS = 60;
+//    public static final int LINHAS = 10;
+//    public static final int COLUNAS = 60;
 
-    public List<String> criarMatriz() {
-        List<List<Integer>> resultado = new ArrayList<>();
+    public String criarMatriz() {
+        List<String> resultado = new ArrayList<>();
 
-        for (int i = 1; i <= LINHAS; i++) {
+        for (int coluna = 1; coluna <= 60; coluna++) {
             List<Integer> linhas = new ArrayList<>();
-            linhas.add(i);
+            linhas.add(coluna);
 
-            for (int sequencia = 1; sequencia <= 10; sequencia++) {
-                numeros.add(sequencia);
+            for (int linha = 1; linha <= 10; linha++) {
+                linhas.add(linha);
             }
-            resultado.add(numeros);
+            resultado.add(linhas.toString());
         }
         System.out.println(resultado);
-        return resultado.get(9);
+        return String.valueOf(resultado);
     }
 
 }

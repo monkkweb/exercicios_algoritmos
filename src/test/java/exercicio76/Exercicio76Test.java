@@ -16,6 +16,10 @@ public class Exercicio76Test {
 
     @Test
     void deve_emprimi_sessenta_colunas(){
-        Assertions.assertEquals();
+        var bla = "olá";
+
+        Matriz matriz = new Matriz();
+
+        Assertions.assertEquals(bla, matriz.criarMatriz());
     }
 }
