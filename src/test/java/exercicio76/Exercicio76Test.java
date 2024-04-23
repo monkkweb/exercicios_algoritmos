@@ -21,7 +21,7 @@ public class Exercicio76Test {
         Matriz matriz = new Matriz(impressora);
         ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
 
-        matriz.calcular();
+        matriz();
 
         Mockito.verify(impressora).imprimir(argumentCaptor.capture());
         Assertions.assertEquals(quantidadeDeColunaEsperada, argumentCaptor.getValue());

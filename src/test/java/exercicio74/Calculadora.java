@@ -1,17 +1,17 @@
 package exercicio74;
 
 public class Calculadora {
+
     public int[] calcular() {
-        int[] resultado = new int[11];
+        int[] resultado = new int[10];
 
-        for (int multiplicador = 1; multiplicador <= 10; multiplicador++) {
-
-            for (int numero = 1; numero <= 10; numero++) {
-                resultado[numero] = multiplicador * numero;
+        for (int tabuada = 1; tabuada <= 10; tabuada++) {
+            for (int multiplicador = 1; multiplicador <= 10; multiplicador++) {
+                resultado[multiplicador - 1] = tabuada * multiplicador;
             }
         }
-
         return resultado;
-
     }
+    //todo: colocar lista da lista(matriz)
+
 }

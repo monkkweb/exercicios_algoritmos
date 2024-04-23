@@ -3,7 +3,7 @@ package exercicio76;
 public class Matriz {
     private Impressora impressora;
 
-    public Matriz(Impressora impressora){
+    public Matriz(Impressora impressora) {
         this.impressora = impressora;
     }
 
