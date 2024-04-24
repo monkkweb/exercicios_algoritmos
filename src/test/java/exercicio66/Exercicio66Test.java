@@ -18,7 +18,7 @@ public class Exercicio66Test {
     Calculadora calculadora;
 
     @Test
-    void deve_somar_numeros_inteiro_quando_primeiro_valor_for_menor_que_segundo_valor() {
+    void deve_somar_numeros_inteiros_entre_segundo_eh_primeiro_numero() {
         Mockito.when(leitor.ler()).thenReturn(1).thenReturn(5);
         var numeroEsperado = 15;
 
@@ -28,7 +28,7 @@ public class Exercicio66Test {
         Assertions.assertEquals(numeroEsperado, argumentCaptorInt.getValue());
     }
     @Test
-    void deve_somar_numeros_inteiros_quando_segundo_valor_for_menor_que_primeiro_valor(){
+    void deve_somar_numeros_inteiros_entre_primeiro_eh_segundo_numero(){
         Mockito.when(leitor.ler()).thenReturn(5).thenReturn(1);
         var numerosEsperado = 15;
 

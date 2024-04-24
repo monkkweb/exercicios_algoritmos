@@ -29,8 +29,8 @@ public class Calculadora {
             maiorPreco = precoAtual > maiorPreco ? precoAtual : maiorPreco;
         }
         double media = somatoria / quantidadeDeMercadoria;
-        impressora.imprimirMedia(media);
-        impressora.imprimirPreco(maiorPreco);
+        impressora.imprimir(media);
+        impressora.imprimir(maiorPreco);
 
     }
 }

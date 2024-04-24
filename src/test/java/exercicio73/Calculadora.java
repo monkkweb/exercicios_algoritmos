@@ -44,11 +44,10 @@ public class Calculadora {
             double mediaFilhos = (double) totalFilhos / totalPessoas;
             double percentualSalarioMenorQue150 = (double) quantidadeDeSalarioMenorQue150 / totalPessoas * 100;
 
-            impressora.imprimir();
-            impressora.imprimirMediaDeSalario(mediaSalario);
-            impressora.imprimirMediaDeFilhos(mediaFilhos);
-            impressora.imprimirMaiorSalario(maiorSalario);
-            impressora.imprimirPercentualDePessoasSalarioMenorQueCentoEhCinquenta(percentualSalarioMenorQue150);
+            impressora.imprimirDouble(mediaSalario);
+            impressora.imprimirDouble(mediaFilhos);
+            impressora.imprimirDouble(maiorSalario);
+            impressora.imprimirDouble(percentualSalarioMenorQue150);
         }
     }
 }

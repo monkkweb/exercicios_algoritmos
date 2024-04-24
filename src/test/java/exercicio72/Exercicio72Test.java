@@ -31,8 +31,8 @@ public class Exercicio72Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirPreco(argumentCaptor.capture());
-        Assertions.assertEquals(maiorPrecoLido, argumentCaptor.getValue());
+        Mockito.verify(impressora,Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(maiorPrecoLido, argumentCaptor.getAllValues().get(1));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class Exercicio72Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirMedia(argumentCaptor.capture());
-        Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
+        Mockito.verify(impressora,Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperada, argumentCaptor.getAllValues().get(0));
     }
 }

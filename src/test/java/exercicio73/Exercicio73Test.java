@@ -1,5 +1,6 @@
 package exercicio73;
 
+import com.sun.source.tree.ModuleTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,8 +26,8 @@ public class Exercicio73Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirMediaDeSalario(argumentCaptor.capture());
-        Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
+        Mockito.verify(impressora, Mockito.times(4)).imprimirDouble(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperada, argumentCaptor.getAllValues().get(0));
     }
 
     @Test
@@ -37,8 +38,8 @@ public class Exercicio73Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirMediaDeFilhos(argumentCaptor.capture());
-        Assertions.assertEquals(mediaEsperada, argumentCaptor.getValue());
+        Mockito.verify(impressora, Mockito.times(4)).imprimirDouble(argumentCaptor.capture());
+        Assertions.assertEquals(mediaEsperada, argumentCaptor.getAllValues().get(1));
     }
 
     @Test
@@ -49,8 +50,8 @@ public class Exercicio73Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirMaiorSalario(argumentCaptor.capture());
-        Assertions.assertEquals(maiorSalarioEsperado, argumentCaptor.getValue());
+        Mockito.verify(impressora, Mockito.times(4)).imprimirDouble(argumentCaptor.capture());
+        Assertions.assertEquals(maiorSalarioEsperado, argumentCaptor.getAllValues().get(2));
     }
 
     @Test
@@ -60,8 +61,8 @@ public class Exercicio73Test {
         var percentualEsperado = 50;
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirPercentualDePessoasSalarioMenorQueCentoEhCinquenta(argumentCaptor.capture());
-        Assertions.assertEquals(percentualEsperado, argumentCaptor.getValue());
+        Mockito.verify(impressora, Mockito.times(4)).imprimirDouble(argumentCaptor.capture());
+        Assertions.assertEquals(percentualEsperado, argumentCaptor.getAllValues().get(3));
     }
 
 }

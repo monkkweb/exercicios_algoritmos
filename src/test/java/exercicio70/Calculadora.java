@@ -28,8 +28,8 @@ public class Calculadora {
         for (int numeroAtual : numeros) {
             maiorValor = numeroAtual > maiorValor ? numeroAtual : maiorValor;
         }
-        impressora.imprimirMaior(maiorValor);
-        impressora.imprimirMenor(menorValor);
+        impressora.imprimir(maiorValor);
+        impressora.imprimir(menorValor);
     }
 }
 //        if (!numeros.isEmpty()) {

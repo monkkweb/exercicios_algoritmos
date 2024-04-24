@@ -23,8 +23,8 @@ public class Exercicio70Test {
         var numeroEsperado = 5;
 
         calculadora.calcular();
-        Mockito.verify(impressora).imprimirMaior(argumentCaptor.capture());
-        Assertions.assertEquals(numeroEsperado, argumentCaptor.getValue());
+        Mockito.verify(impressora,Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(numeroEsperado, argumentCaptor.getAllValues().get(0));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class Exercicio70Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora).imprimirMenor(argumentCaptor.capture());
-        Assertions.assertEquals(numeroEsperado, argumentCaptor.getValue());
+        Mockito.verify(impressora,Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(numeroEsperado, argumentCaptor.getAllValues().get(1));
     }
 }

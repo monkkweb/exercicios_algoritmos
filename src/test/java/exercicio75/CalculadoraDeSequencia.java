@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CalculadoraDeSequencia {
 
-    public List<Integer> calcular() {
+    public List<List<Integer>> calcular() {
         List<List<Integer>> resultado = new ArrayList<>();
 
         for (int numero = 1; numero <= 10; numero++) {
@@ -18,6 +18,6 @@ public class CalculadoraDeSequencia {
             resultado.add(numeros);
         }
         System.out.println(resultado);
-        return resultado.get(9);
+        return resultado;
     }
 }

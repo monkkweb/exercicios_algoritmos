@@ -16,7 +16,7 @@ public class Exercicio67Test {
     private Impressora impressora;
 
     @Test
-    void deve_calcular_calcular_media_entre_quinze_e_cem() {
+    void deve_calcular_media_entre_quinze_e_cem() {
         var mediaEsperada = 57.5;
 
         calculadora.calcular();

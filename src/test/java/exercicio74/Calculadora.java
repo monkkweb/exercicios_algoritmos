@@ -1,17 +1,24 @@
 package exercicio74;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Calculadora {
 
-    public int[] calcular() {
-        int[] resultado = new int[10];
+    public List<List<Integer>> calcular() {
+        List<List<Integer>> resultadoFinal = new ArrayList<>();
 
         for (int tabuada = 1; tabuada <= 10; tabuada++) {
-            for (int multiplicador = 1; multiplicador <= 10; multiplicador++) {
-                resultado[multiplicador - 1] = tabuada * multiplicador;
+            List<Integer> valores = new ArrayList<>();
+            valores.add(tabuada);
+            for (int numeroMultiplicador = 1; numeroMultiplicador <= 10; numeroMultiplicador++) {
+                valores.add(numeroMultiplicador *tabuada);
             }
+            resultadoFinal.add(valores);
         }
-        return resultado;
+        System.out.println(resultadoFinal);
+        return resultadoFinal;
     }
-    //todo: colocar lista da lista(matriz)
 
 }
