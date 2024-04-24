@@ -7,20 +7,17 @@ public class Matriz {
         this.impressora = impressora;
     }
 
-    public String calcular() {
-        StringBuilder resultado = new StringBuilder();
-        char caractere;
-        for (int linha = 1; linha <= 10; linha++) {
-            for (int coluna = 1; coluna <= 60; coluna++) {
-                if (linha == 1 || linha == 10 || coluna == 1 || coluna == 60) {
-                    caractere = '+';
+    public void calcular() {
+        String[][] matriz = new String[10][60];
+        for (int linha = 0; linha < 10; linha++) {
+            for (int coluna = 0; coluna < 60; coluna++) {
+                if (linha == 0 || linha == 9 || coluna == 0 || coluna == 59) {
+                    matriz[linha][coluna] = "+";
                 } else {
-                    caractere = ' ';
+                    matriz[linha][coluna] = " ";
                 }
-                impressora.imprimir(String.valueOf(caractere));
+                impressora.imprimir(matriz[linha][coluna]);
             }
-            impressora.imprimir("\n");
         }
-        return resultado.toString();
     }
 }
