@@ -13,6 +13,14 @@ public class Matriz {
             for (int coluna = 0; coluna < 60; coluna++) {
                 if (linha == 0 || linha == 9 || coluna == 0 || coluna == 59) {
                     matriz[linha][coluna] = "+";
+                } else if (linha == 1 && coluna >= 9) {
+                    if (coluna - 9 < 4) {
+                        matriz[linha][coluna] = " olá".substring(coluna - 9, coluna - 8);
+                    } else {
+                        matriz[linha][coluna] = " ";
+                    }
+                } else if (coluna == 1 || coluna == 58) {
+                    matriz[linha][coluna] = "+";
                 } else {
                     matriz[linha][coluna] = " ";
                 }
