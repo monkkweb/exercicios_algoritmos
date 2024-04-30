@@ -15,7 +15,7 @@ import static org.mockito.Mockito.mock;
 public class Exercicio76Test {
 
     @Test
-    void deve_imprimi_sessenta_colunas() {
+    void deve_imprimir_retangulo_com_a_frase_ola_no_canto_do_retangulo() {
         Impressora impressora = mock(Impressora.class);
         String quantidadeDeColunaEsperada = "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++        Olá                                                 ++                                                          ++                                                          ++                                                          ++                                                          ++                                                          ++                                                          ++                                                          +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
         Matriz matriz = new Matriz(impressora);
