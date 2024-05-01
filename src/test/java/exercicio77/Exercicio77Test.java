@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 public class Exercicio77Test {
 
     @Test
-    void deve_mostrar_resultado_do_vetor_de_valor_cinco() {
-        var vetor = new Vetor();
-        int[] valorDoVetorEsperado = {5};
+    void deve_imprimir_resultado_do_vetor_apos_ah_modificacao_pedida() {
+        int[] vetorEsperado = {5, 7, 4, 1, 7, 8, 3, 6};
 
-        int [] resultado = vetor.calcular();
+        Vetor vetor = new Vetor();
 
-        Assertions.assertArrayEquals(valorDoVetorEsperado, resultado);
+        Assertions.assertArrayEquals(vetorEsperado, vetor.calcular());
     }
 }
