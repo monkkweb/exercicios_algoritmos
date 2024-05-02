@@ -17,7 +17,9 @@ public class Vetor {
                 , leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler()
                 , leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler());
         int maiorNumeroDoVetor = numerosDoVetorQ.get(0);
-        int posicaoDoMaiorVetor = 0;
+        int posicaoDoMaiorNumeroDoVetor = 0;
+        int menorNumeroDoVetor = Integer.MAX_VALUE;
+        int posicaoDoMenorNumeroDoVetor = Integer.MAX_VALUE;
         int posicaoAtualDoVetor = 0;
 
         for (int numeroDoVetor : numerosDoVetorQ) {
@@ -27,11 +29,17 @@ public class Vetor {
             }
             if (numeroDoVetor > maiorNumeroDoVetor) {
                 maiorNumeroDoVetor = numeroDoVetor;
-                posicaoDoMaiorVetor = posicaoAtualDoVetor;
+                posicaoDoMaiorNumeroDoVetor = posicaoAtualDoVetor;
+            }
+            if (numeroDoVetor < menorNumeroDoVetor) {
+                menorNumeroDoVetor = numeroDoVetor;
+                posicaoDoMenorNumeroDoVetor = posicaoAtualDoVetor;
             }
             posicaoAtualDoVetor++;
         }
         impressora.imprimirInt(maiorNumeroDoVetor);
-        impressora.imprimirInt(posicaoDoMaiorVetor);
+        impressora.imprimirInt(posicaoDoMaiorNumeroDoVetor);
+        impressora.imprimirInt(menorNumeroDoVetor);
+        impressora.imprimirInt(posicaoDoMenorNumeroDoVetor);
     }
 }

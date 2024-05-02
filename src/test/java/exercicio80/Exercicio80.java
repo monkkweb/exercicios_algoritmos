@@ -12,9 +12,9 @@ import static org.mockito.Mockito.*;
 
 public class Exercicio80 {
     @Captor
-    ArgumentCaptor<Integer> argumentCaptor;
+    ArgumentCaptor<Integer> argumentCaptorInt;
     @Captor
-    ArgumentCaptor<String> stringArgumentCaptor;
+    ArgumentCaptor<String> argumentCaptorSting;
     @Mock
     private Impressora impressora;
     @Mock
@@ -31,8 +31,8 @@ public class Exercicio80 {
 
         vetor.calcular();
 
-        Mockito.verify(impressora, times(2)).imprimirInt(argumentCaptor.capture());
-        Assertions.assertEquals(posicoesEsperadas, argumentCaptor.getValue());
+                Mockito.verify(impressora, times(4)).imprimirInt(argumentCaptorInt.capture());
+        Assertions.assertEquals(posicoesEsperadas, argumentCaptorInt.getAllValues().get(1));
     }
 
     @Test
@@ -42,8 +42,8 @@ public class Exercicio80 {
 
         vetor.calcular();
 
-        Mockito.verify(impressora, times(2)).imprimirInt(argumentCaptor.capture());
-        Assertions.assertEquals(valorEsperado, argumentCaptor.getAllValues().get(0));
+        Mockito.verify(impressora, times(4)).imprimirInt(argumentCaptorInt.capture());
+        Assertions.assertEquals(valorEsperado, argumentCaptorInt.getAllValues().get(0));
     }
 
     @Test
@@ -53,8 +53,8 @@ public class Exercicio80 {
 
         vetor.calcular();
 
-        Mockito.verify(impressora, times(2)).imprimirInt(argumentCaptor.capture());
-        Assertions.assertEquals(valorEsperado, argumentCaptor.getAllValues().get(1));
+        Mockito.verify(impressora, times(4)).imprimirInt(argumentCaptorInt.capture());
+        Assertions.assertEquals(valorEsperado, argumentCaptorInt.getAllValues().get(1));
     }
 
     @Test
@@ -64,7 +64,27 @@ public class Exercicio80 {
 
         vetor.calcular();
 
-        Mockito.verify(impressora).imprimirString(stringArgumentCaptor.capture());
-        Assertions.assertEquals(fraseEsperada, stringArgumentCaptor.getValue());
+        Mockito.verify(impressora).imprimirString(argumentCaptorSting.capture());
+        Assertions.assertEquals(fraseEsperada, argumentCaptorSting.getValue());
+    }
+    @Test
+    void deve_imprimir_menor_numero_do_vetor_Q(){
+        when(leitor.ler()).thenReturn(50).thenReturn(100);
+        var menorNumeroEsperdado = 50;
+
+        vetor.calcular();
+
+        verify(impressora, times(4)).imprimirInt(argumentCaptorInt.capture());
+        Assertions.assertEquals(menorNumeroEsperdado, argumentCaptorInt.getAllValues().get(2));
+    }
+    @Test
+    void deve_imprimr_posicao_do_menor_numero_do_vetor(){
+        when(leitor.ler()).thenReturn(10).thenReturn(5).thenReturn(50);
+        var posicaoEsperada= 1;
+
+        vetor.calcular();
+
+        verify(impressora,times(4)).imprimirInt(argumentCaptorInt.capture());
+        Assertions.assertEquals(posicaoEsperada, argumentCaptorInt.getAllValues().get(3));
     }
 }
