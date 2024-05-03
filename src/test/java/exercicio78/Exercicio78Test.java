@@ -6,7 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Arrays;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class Exercicio78Test {
@@ -20,10 +20,10 @@ public class Exercicio78Test {
     Agenda agenda;
 
     @Test
-    void deve_exibir_mensagem_de_encontrar_pessoa_na_lista() {
-        Mockito.when(leitor.ler()).thenReturn("Vinicios").thenReturn("Roberto").thenReturn("Maria").
-                thenReturn("ed").thenReturn("Nabia").thenReturn("Vasco").thenReturn("blod")
-                .thenReturn("penis").thenReturn("gama").thenReturn("ster").thenReturn("ster");
+    void deve_exibir_mensagem_de_pessoa_encontrada_na_lista() {
+        when(leitor.ler()).thenReturn("Vinicios").thenReturn("Roberto").thenReturn("Maria").
+                thenReturn("Ed").thenReturn("Nabia").thenReturn("Vasco").thenReturn("Blod")
+                .thenReturn("Deni").thenReturn("Gama").thenReturn("Ster").thenReturn("Ster");
         var mensagemEsperada = "ENCONTRADA!";
 
         agenda.nomes();
@@ -33,10 +33,10 @@ public class Exercicio78Test {
     }
 
     @Test
-    void deve_exibir_mensagem_de_nao_encontrado_pessoa_na_lista() {
-        Mockito.when(leitor.ler()).thenReturn("Vinicios").thenReturn("Roberto").thenReturn("Maria").
-                thenReturn("ed").thenReturn("Nabia").thenReturn("Vasco").thenReturn("blod")
-                .thenReturn("arabia").thenReturn("gama").thenReturn("ster").thenReturn("penisvaldo");
+    void deve_exibir_mensagem_de_pessoa_nao_encontrada_na_lista() {
+        when(leitor.ler()).thenReturn("Vinicios").thenReturn("Roberto").thenReturn("Maria").
+                thenReturn("Ed").thenReturn("Nabia").thenReturn("Vasco").thenReturn("Blod")
+                .thenReturn("Deni").thenReturn("Gama").thenReturn("Ster").thenReturn("Penisvaldo");
         var mensagemEsperada = "NÃO ENCONTRADA!";
 
         agenda.nomes();

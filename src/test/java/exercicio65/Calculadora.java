@@ -13,9 +13,9 @@ public class Calculadora {
         var soma = 0;
         var valorInicial = leitor.ler();
         var valorFinal = leitor.ler();
-        if (valorFinal < valorInicial) {
+        if (valorFinal < valorInicial)
             impressora.imprimirString("SEGUNDO VALOR TEM QUE SER MAIOR!!!");
-        }
+
         for (int i = valorInicial; i <= valorFinal; i++) {
             soma += i;
         }

@@ -13,14 +13,15 @@ public class CalculadorDeIntervalo {
         int foraDoIntervalo = 0;
         int dentroDoIntervalo = 0;
         for (int i = 0; i < 10; i++) {
-             int numeros = leitor.ler();
-            if (numeros <= 20 && numeros >= 10) {
+            int numero = leitor.ler();
+            if (numero <= 20 && numero >= 10) {
                 dentroDoIntervalo++;
-                impressora.imprimirDentro(dentroDoIntervalo);
-            }else {
+                impressora.imprimir(dentroDoIntervalo);
+            } else {
                 foraDoIntervalo++;
-                impressora.imprimirFora(foraDoIntervalo);
+                impressora.imprimir(foraDoIntervalo);
             }
         }
+        System.out.println(dentroDoIntervalo);
     }
 }

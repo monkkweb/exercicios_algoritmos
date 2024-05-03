@@ -19,7 +19,7 @@ public class Exercicio70Test {
 
     @Test
     void deve_imprimir_o_maior_numero_de_cem_valores() {
-        Mockito.when(leitor.ler()).thenReturn(4).thenReturn(5);
+        Mockito.when(leitor.ler()).thenReturn(5).thenReturn(4);
         var numeroEsperado = 5;
 
         calculadora.calcular();

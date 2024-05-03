@@ -31,8 +31,7 @@ public class Exercicio71Test {
 
     @Test
     void deve_ler_uma_quantidade() {
-        Mockito.when(leitor.lerInt())
-                .thenReturn(1);
+        Mockito.when(leitor.lerInt()).thenReturn(1);
 
         calculadora.calcular();
 

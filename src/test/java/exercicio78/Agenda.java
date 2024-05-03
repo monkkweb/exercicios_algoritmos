@@ -15,7 +15,7 @@ public class Agenda {
 
     public void nomes() {
         impressora.imprimir("Nome das pessoas: ");
-        List<String> nomes = Arrays.asList(leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(),
+        List<String> nomesDasPessoas = Arrays.asList(leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(),
                 leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler(), leitor.ler());
 
         impressora.imprimir("quem deseja procurar na lista? ");
@@ -23,12 +23,12 @@ public class Agenda {
         String mensagem = "NÃO ENCONTRADA!";
         String nomeProcurado = leitor.ler();
 
-        for (String nome : nomes) {
+        for (String nome : nomesDasPessoas) {
             if (nome.equals(nomeProcurado)) {
                 mensagem = "ENCONTRADA!";
             }
         }
         impressora.imprimir(mensagem);
-        System.out.println(nomes);
+        System.out.println(nomesDasPessoas);
     }
 }

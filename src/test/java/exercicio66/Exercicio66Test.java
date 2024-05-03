@@ -8,6 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class Exercicio66Test {
+    public static final int NUMERO_ESPERADO = 15;
     @Captor
     ArgumentCaptor<Integer> argumentCaptorInt;
     @Mock
@@ -20,21 +21,20 @@ public class Exercicio66Test {
     @Test
     void deve_somar_numeros_inteiros_entre_segundo_eh_primeiro_numero() {
         Mockito.when(leitor.ler()).thenReturn(1).thenReturn(5);
-        var numeroEsperado = 15;
 
         calculadora.calcular();
 
         Mockito.verify(impressora).imprimir(argumentCaptorInt.capture());
-        Assertions.assertEquals(numeroEsperado, argumentCaptorInt.getValue());
+        Assertions.assertEquals(NUMERO_ESPERADO, argumentCaptorInt.getValue());
     }
+
     @Test
-    void deve_somar_numeros_inteiros_entre_primeiro_eh_segundo_numero(){
+    void deve_somar_numeros_inteiros_entre_primeiro_eh_segundo_numero() {
         Mockito.when(leitor.ler()).thenReturn(5).thenReturn(1);
-        var numerosEsperado = 15;
 
         calculadora.calcular();
 
         Mockito.verify(impressora).imprimir(argumentCaptorInt.capture());
-        Assertions.assertEquals(numerosEsperado, argumentCaptorInt.getValue());
+        Assertions.assertEquals(NUMERO_ESPERADO, argumentCaptorInt.getValue());
     }
 }

@@ -13,22 +13,23 @@ public class Calculadora {
     }
 
     void calcular() {
+        List<Double> valores = new ArrayList<>();
         double maiorPreco = 0;
         double preco;
-        double somatoria = 0;
+        double somaDosPrecos = 0;
         int quantidadeDeMercadoria;
-        List<Double> valores = new ArrayList<>();
+
         for (quantidadeDeMercadoria = 0; quantidadeDeMercadoria < 15; quantidadeDeMercadoria++) {
             int codigoDaMercadoria = leitor.lerInt();
             preco = leitor.lerDouble();
-            somatoria += preco;
+            somaDosPrecos += preco;
             valores.add(preco);
         }
 
         for (double precoAtual : valores) {
             maiorPreco = precoAtual > maiorPreco ? precoAtual : maiorPreco;
         }
-        double media = somatoria / quantidadeDeMercadoria;
+        double media = somaDosPrecos / quantidadeDeMercadoria;
         impressora.imprimir(media);
         impressora.imprimir(maiorPreco);
 

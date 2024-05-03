@@ -35,7 +35,7 @@ public class Exercicio62Test {
         Mockito.when(leitor.ler()).thenReturn(5);
         Mockito.when(leitor.lerDouble()).thenReturn(7d).thenReturn(8d).thenReturn(5d)
                 .thenReturn(2d).thenReturn(10d);
-        var mediaEsperada = 6.4d;
+        var mediaEsperada = 6.4;
 
         calculadora.calcular();
 

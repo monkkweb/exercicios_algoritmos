@@ -18,7 +18,7 @@ public class Exercicio69Test {
     Calculadora calculadora;
 
     @Test
-    void deve_calcular_media_de_estoque_() {
+    void deve_calcular_media_de_estoque() {
         Mockito.when(leitor.lerDouble()).thenReturn(4d).thenReturn(5d).thenReturn(9d);
         Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("sim").thenReturn("não");
         var mediaEsperada = 6.75;
@@ -34,7 +34,6 @@ public class Exercicio69Test {
         Mockito.when(leitor.lerDouble()).thenReturn(4d).thenReturn(5d).thenReturn(9d);
         Mockito.when(leitor.lerString()).thenReturn("sim").thenReturn("sim").thenReturn("sim").thenReturn("não");
         var volorTotalEsperado = 27;
-
         calculadora.calcular();
 
         Mockito.verify(impressora, Mockito.times(5)).imprimirDouble(argumetCaptorDouble.capture());
@@ -48,7 +47,7 @@ public class Exercicio69Test {
 
         calculadora.calcular();
 
-        Mockito.verify(impressora, Mockito.times(2)).imprimirDouble(argumetCaptorDouble.capture());
+         Mockito.verify(impressora, Mockito.times(2)).imprimirDouble(argumetCaptorDouble.capture());
         Assertions.assertEquals(valorEsperado, argumetCaptorDouble.getValue());
     }
 }

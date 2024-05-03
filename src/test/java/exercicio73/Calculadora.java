@@ -22,7 +22,7 @@ public class Calculadora {
         do {
             var salario = leitor.lerDouble();
             if (salario < 0)
-                throw new RuntimeException("não pode ser negativo");
+                throw new RuntimeException("Não pode salario menor que zero.");
             somaSalario += salario;
 
             var numeroFilhos = leitor.lerInt();
