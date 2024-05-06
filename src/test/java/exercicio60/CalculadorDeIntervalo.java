@@ -22,6 +22,5 @@ public class CalculadorDeIntervalo {
                 impressora.imprimir(foraDoIntervalo);
             }
         }
-        System.out.println(dentroDoIntervalo);
     }
 }

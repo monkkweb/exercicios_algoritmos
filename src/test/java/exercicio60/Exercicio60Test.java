@@ -29,7 +29,6 @@ public class Exercicio60Test {
         verify(impressora, Mockito.times(10)).imprimir(argumentCaptor.capture());
         Assertions.assertEquals(valorEsperado, argumentCaptor.getValue());
     }
-
     @Test
     void deve_imprimir_quantos_numeros_estao_dentro_do_intervalo_de_dez_ah_vinte() {
         Mockito.when(leitor.ler()).thenReturn(11).thenReturn(18).thenReturn(19).thenReturn(0);

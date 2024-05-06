@@ -11,17 +11,17 @@ import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 public class Exercicio53Test {
+    @Captor
+    ArgumentCaptor<List<Integer>> arrayArgumentCaptor;
+    @Mock
+    public Leitor leitor;
     @Mock
     public Impressora impressora;
     @InjectMocks
     private Numeros numeros;
-    @Mock
-    public Leitor leitor;
-    @Captor
-    ArgumentCaptor<List<Integer>> arrayArgumentCaptor;
 
     @Test
-    public void contador_de_numeros_inteiros_ate_valor_n() {
+    void contador_de_numeros_inteiros_ate_valor_n() {
         Mockito.when(leitor.lerInteiro()).thenReturn(5);
         List<Integer> numerosEsperados = Arrays.asList(1, 2, 3, 4, 5);
 

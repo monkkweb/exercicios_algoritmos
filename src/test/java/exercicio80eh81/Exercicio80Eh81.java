@@ -24,9 +24,10 @@ public class Exercicio80Eh81 {
 
     @Test
     void deve_ler_posicoes_do_vetor_Q_aceitando_apenas_numeros_positivos() {
-        when(leitor.ler()).thenReturn(1).thenReturn(2).thenReturn(3).thenReturn(4).thenReturn(5).thenReturn(6).thenReturn(7).thenReturn
-                        (8).thenReturn(9).thenReturn(10).thenReturn(11).thenReturn(12).thenReturn(13).thenReturn(14).thenReturn(15)
-                .thenReturn(16).thenReturn(17).thenReturn(18).thenReturn(19).thenReturn(20);
+        when(leitor.ler()).thenReturn(1).thenReturn(2).thenReturn(3).thenReturn(4).thenReturn(5).thenReturn(6)
+                .thenReturn(7).thenReturn(8).thenReturn(9).thenReturn(10).thenReturn(11).thenReturn(12)
+                .thenReturn(13).thenReturn(14).thenReturn(15).thenReturn(16).thenReturn(17).thenReturn(18)
+                .thenReturn(19).thenReturn(20);
         var numeroEsperado = 19;
 
         vetor.calcular();

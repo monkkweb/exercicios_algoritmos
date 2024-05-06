@@ -11,16 +11,16 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 
 public class Exercici48Teste {
+    @Captor
+    ArgumentCaptor<String> argumentCaptorString;
+    @Captor
+    ArgumentCaptor<Double> argumentCaptor;
     @Mock
     public Impressora impressora;
     @Mock
     public Leitor leitor;
     @InjectMocks
     private Calculadora calculadora;
-    @Captor
-    ArgumentCaptor<Double> argumentCaptor;
-    @Captor
-    ArgumentCaptor<String> argumentCaptorString;
 
     @ParameterizedTest(name = "media = {2}")
     @CsvSource({"5.0, 5.0, 5.0", "4.0, 5.0, 4.5"})
