@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class Exercicio82 {
+public class Exercicio82Test {
     @Captor
     ArgumentCaptor<List<Double>> argumentCaptor;
     @Mock
@@ -28,7 +28,7 @@ public class Exercicio82 {
 
         vetor.calcular();
 
-        Mockito.verify(impressora,Mockito.times(10)).imprimir(argumentCaptor.capture());
+        Mockito.verify(impressora).imprimir(argumentCaptor.capture());
         Assertions.assertEquals(vetorEsperado, argumentCaptor.getValue());
     }
 }

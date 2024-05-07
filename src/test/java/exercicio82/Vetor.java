@@ -1,7 +1,6 @@
 package exercicio82;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Vetor {
@@ -24,9 +23,7 @@ public class Vetor {
         for (double numerosDoVetorA : vetorA) {
             vetorM.add(numerosDoVetorA * multiplicador);
         }
-        for (double numero : vetorM) {
-            impressora.imprimir(vetorM);
-        }
+        impressora.imprimir(vetorM);
         System.out.println(vetorM);
 
     }

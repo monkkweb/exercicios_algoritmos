@@ -10,15 +10,15 @@ import java.util.Arrays;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class Exercicio84 {
+public class Exercicio84Test {
     @Captor
     ArgumentCaptor<List<Integer>> argumentCaptor;
+    @Mock
+    Leitor leitor;
     @Mock
     private Impressora impressora;
     @InjectMocks
     Vetor vetor;
-    @Mock
-    Leitor leitor;
 
     @Test
     void deve_imprimir_o_vetorA() {

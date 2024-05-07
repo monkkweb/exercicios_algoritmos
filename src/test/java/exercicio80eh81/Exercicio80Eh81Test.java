@@ -10,7 +10,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 
-public class Exercicio80Eh81 {
+public class Exercicio80Eh81Test {
     @Captor
     ArgumentCaptor<Integer> argumentCaptorInt;
     @Captor

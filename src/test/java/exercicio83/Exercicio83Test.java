@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class Exercicio83 {
+public class Exercicio83Test {
     @Captor
     ArgumentCaptor<List<Integer>> argumentCaptor;
     @Mock
@@ -21,7 +21,7 @@ public class Exercicio83 {
     Vetor vetor;
 
     @Test
-    void dev_ler_vetor() {
+    void deve_ler_vetor() {
         Mockito.when(leitor.ler()).thenReturn(1).thenReturn(2).thenReturn(3).thenReturn(4).thenReturn(5)
                 .thenReturn(6).thenReturn(7).thenReturn(8).thenReturn(9).thenReturn(10).thenReturn(11)
                 .thenReturn(12).thenReturn(13).thenReturn(14).thenReturn(15).thenReturn(16).thenReturn(17)

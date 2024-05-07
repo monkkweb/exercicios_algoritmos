@@ -23,10 +23,8 @@ public class Vetor {
             numeros.add(leito.ler());
         }
         Collections.reverse(numeros);
-        //        for (int i = 20; i > 0; i--) {
         impressora.imprimir(numeros);
         System.out.println(numeros);
-//        }
 
     }
 }
