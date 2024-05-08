@@ -57,7 +57,7 @@ public class Exercicio85Test {
                 .thenReturn(23d).thenReturn(27d).thenReturn(40d).thenReturn(11d).thenReturn(32d)
                 .thenReturn(25d).thenReturn(10d).thenReturn(14d).thenReturn(19d).thenReturn(20d)
                 .thenReturn(17d).thenReturn(31d).thenReturn(23d).thenReturn(29d).thenReturn(32d);
-        List<Double> mediaEsperada = Arrays.asList(31.60821917808219);
+        List<Double> mediaEsperada = Arrays.asList(31.61);
 
 
         temperatura.calcular();

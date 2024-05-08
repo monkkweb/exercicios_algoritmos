@@ -33,7 +33,9 @@ public class Temperatura {
         for (double temperatura : temperaturas) {
             soma += temperatura;
         }
-        double media = soma / temperaturas.toArray().length;
+        double escala = Math.pow(10, 2);
+
+        double media = Math.round((soma / temperaturas.toArray().length)*escala)/escala;
         for (int i = 0; i < 365; i++) {
             if (temperaturas.get(i) < media)
                 contadorDeDiasQueFoiAhBaixoDaMedia++;
