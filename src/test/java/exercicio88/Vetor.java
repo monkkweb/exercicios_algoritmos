@@ -16,21 +16,22 @@ public class Vetor {
 
     public void numerador() {
         List<Integer> numeros = new ArrayList<>(20);
-        for (int i = -1; i < 20; i++) {
+        for (int i = 0; i <= 20; i++) {
             numeros.add(leitor.ler());
         }
-        System.out.println(numeros);
         impressora.imprimir(numeros);
+
         int numeroVerificador = leitor.ler();
-//        for (int i = 0; i < 20; i++) {
+
         if (numeros.contains(numeroVerificador)) {
             numeros.remove(Integer.valueOf(numeroVerificador));
-//            }
             impressora.imprimir(numeros);
-//            if (numeros.get(i) == numeroVerificador){
-//            }
+        } else {
+            List<Integer> numerosRefatorados = new ArrayList<>(21);
+            numerosRefatorados.addAll(numeros);
+            numerosRefatorados.add(numeroVerificador);
+            System.out.println(numerosRefatorados);
+            impressora.imprimir(numerosRefatorados);
         }
-
-
     }
 }
