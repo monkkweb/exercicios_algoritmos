@@ -2,6 +2,7 @@ package exercicio88;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Vetor {
@@ -16,21 +17,20 @@ public class Vetor {
 
     public void numerador() {
         List<Integer> numeros = new ArrayList<>(20);
-        for (int i = 0; i <= 20; i++) {
+        for (int i = 0; i < 20; i++) {
             numeros.add(leitor.ler());
         }
         impressora.imprimir(numeros);
 
         int numeroVerificador = leitor.ler();
 
-        if (numeros.contains(numeroVerificador)) {
-            numeros.remove(Integer.valueOf(numeroVerificador));
-            impressora.imprimir(numeros);
+        List<Integer> numerosRefatorados = new ArrayList<>(numeros);
+        numerosRefatorados.addAll(numeros);
+        if (numerosRefatorados.contains(numeroVerificador)) {
+            numerosRefatorados.remove(Integer.valueOf(numeroVerificador));
+            impressora.imprimir(numerosRefatorados);
         } else {
-            List<Integer> numerosRefatorados = new ArrayList<>(21);
-            numerosRefatorados.addAll(numeros);
             numerosRefatorados.add(numeroVerificador);
-            System.out.println(numerosRefatorados);
             impressora.imprimir(numerosRefatorados);
         }
     }
