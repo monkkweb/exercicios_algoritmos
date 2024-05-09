@@ -2,7 +2,6 @@ package exercicio88;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Vetor {
@@ -24,7 +23,7 @@ public class Vetor {
 
         int numeroVerificador = leitor.ler();
 
-        List<Integer> numerosRefatorados = new ArrayList<>(numeros);
+        List<Integer> numerosRefatorados = new ArrayList<>(21);
         numerosRefatorados.addAll(numeros);
         if (numerosRefatorados.contains(numeroVerificador)) {
             numerosRefatorados.remove(Integer.valueOf(numeroVerificador));

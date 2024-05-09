@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class Exercicio88 {
+public class Exercicio88Test {
     @Captor
     private ArgumentCaptor<List<Integer>> argumentCaptor;
     @Mock
@@ -45,6 +45,22 @@ public class Exercicio88 {
                 .thenReturn(19).thenReturn(20).thenReturn(numeroVerificador);
 
         List<Integer> vetorEsperado = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21);
+
+        vetor.numerador();
+
+        Mockito.verify(impressora, Mockito.times(2)).imprimir(argumentCaptor.capture());
+        Assertions.assertEquals(vetorEsperado, argumentCaptor.getAllValues().get(1));
+    }
+
+    @Test
+    void deve_remover_numero_indicado_no_verificador_caso_ele_ele_ja_esteja_na_lista() {
+        var numeroVerificador = 20;
+        Mockito.when(leitor.ler())
+                .thenReturn(1).thenReturn(2).thenReturn(3).thenReturn(4).thenReturn(5).thenReturn(6)
+                .thenReturn(7).thenReturn(8).thenReturn(9).thenReturn(10).thenReturn(11).thenReturn(12)
+                .thenReturn(13).thenReturn(14).thenReturn(15).thenReturn(16).thenReturn(17).thenReturn(18)
+                .thenReturn(19).thenReturn(20).thenReturn(numeroVerificador);
+        List<Integer> vetorEsperado = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
 
         vetor.numerador();
 
